@@ -47,3 +47,24 @@
 
 // Our greatest glory is not in never falling, but in rising every time we fall.
 // Confucius
+
+const sections = document.querySelectorAll("section");
+const trans = document.querySelector(".trans");
+const gradients = ["papayawhip", "peachpuff", "cornflowerblue", "chartreuse"];
+
+const options = {
+  threshold: 0.7,
+};
+
+let observer = new IntersectionObserver(navScroll, options);
+
+function navScroll(entries) {
+  entries.forEach((entry) => {
+    // console.log(entry);
+    const className = entry.target.className;
+  });
+}
+
+sections.forEach((section) => {
+  observer.observe(section);
+});
